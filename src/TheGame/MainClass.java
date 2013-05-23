@@ -3,6 +3,8 @@ package TheGame;
 public class MainClass {
 
 	public void main(String args[]){
-		System.out.println("Just a test message");
+		String x;
+		x = "This is a test string";
+		System.out.println(x);
 	}
 }
