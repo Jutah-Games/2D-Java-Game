@@ -7,24 +7,22 @@ import java.awt.event.ActionListener;
 
 public class Gui extends JFrame {
 	String tfs;
-	String pfs = "myPass";
-	
-	private boolean loginU = false;
-	private boolean loginP = false;
-	
-	JTextField tf = new JTextField(tfs, 10);
-	JPasswordField pf = new JPasswordField(pfs, 10);
+	String pfs;
+	JTextField tf;
+	JPasswordField pf;
 	
 	public Gui() {
 		setLayout(new FlowLayout());
+		tf  = new JTextField(tfs, 10);
+		pf = new JPasswordField(pfs, 10);
 		add(tf);
-		add(pf);
+	//	add(pf);
 		
 		tf.addActionListener(
 				new ActionListener() {
 					public void actionPerformed(ActionEvent e){
-						tfs = e.getActionCommand();
-						System.out.println(tfs);
+				//		tfs = e.getActionCommand();
+						loginMethod();
 					}
 				}
 			);
@@ -32,9 +30,16 @@ public class Gui extends JFrame {
 				new ActionListener() {
 					public void actionPerformed(ActionEvent e){
 						pfs = e.getActionCommand();
-						System.out.println(pfs);
+						loginMethod();
 					}
 				}
 			);
+	}
+	
+	private void loginMethod(){
+		if(tfs == "deark")
+			JOptionPane.showMessageDialog(null, "Logged In Succesfully");
+		else
+			JOptionPane.showMessageDialog(null,  "Didn't work");
 	}
 }
