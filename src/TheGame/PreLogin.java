@@ -1,31 +1,27 @@
 package TheGame;
 
-public class Gui {
+import javax.swing.*;
 
-	public Gui(){
-		PreLogin pl = new PreLogin();
-	}
-	
-	
-	
-	/*	String tfs = "Username";
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class PreLogin extends JFrame {
+
+	String tfs = "Username";
 	String pfs = "*****";
 	JTextField tf;
 	JPasswordField pf;
 	JButton login;
 	Login l;
 	
-	public Gui() {
-		guiMethod();
-	}
-	
-	public void guiMethod() {
-		if(l.loggedIn == false)
-			preLogin();
-	}
-	
-	private void preLogin() {
+	public PreLogin() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(1280, 600);
+		setResizable(true);
+		setVisible(true);
 		setLayout(new FlowLayout());
+		
 		login = new JButton("Login");
 		tf  = new JTextField(tfs, 10);
 		pf = new JPasswordField(pfs, 10);
@@ -40,6 +36,5 @@ public class Gui {
 					}
 				}
 			);
-		guiMethod();
-	}*/
+	}
 }
