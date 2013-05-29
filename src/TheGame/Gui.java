@@ -1,30 +1,22 @@
 package TheGame;
 
-public class Gui {
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-	public Gui(){
-		PreLogin pl = new PreLogin();
-	}
+public class Gui extends JFrame{
 	
-	
-	
-	/*	String tfs = "Username";
+	String tfs = "Username";
 	String pfs = "*****";
 	JTextField tf;
 	JPasswordField pf;
 	JButton login;
-	Login l;
+	boolean loggedIn = false;
 	
-	public Gui() {
-		guiMethod();
-	}
-	
-	public void guiMethod() {
-		if(l.loggedIn == false)
-			preLogin();
-	}
-	
-	private void preLogin() {
+	public Gui(){
+		setSize(1280, 600);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(true);
 		setLayout(new FlowLayout());
 		login = new JButton("Login");
 		tf  = new JTextField(tfs, 10);
@@ -32,14 +24,32 @@ public class Gui {
 		add(tf);
 		add(pf);
 		add(login);
+		setVisible(true);
 		
 		login.addActionListener(
 				new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						l = new Login(tf.getText(), pf.getPassword());
+						Login(tf.getText(), pf.getPassword());
 					}
 				}
 			);
-		guiMethod();
-	}*/
+	}
+
+	private <Password> void Login(String uN, Password pW) {
+		if(uN.equals("deark")){
+			loggedIn = true;
+		}
+		
+		if(loggedIn == true) {
+			JOptionPane.showMessageDialog(null, "Successfully Logged In");
+			closeCurrent();
+			}
+		else
+			JOptionPane.showMessageDialog(null, "Wrong username or password");
+	}
+	
+	private void closeCurrent() {
+		setVisible(false);
+		Game game = new Game();
+	}
 }
